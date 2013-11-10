@@ -1,0 +1,97 @@
+/* Put your CSS here */
+html, body {
+  margin: 20px;
+  font-family: 'Roboto', sans-serif;
+  color: #606366;
+}
+*, *:before, *:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+ }
+
+.media {margin:10px;}
+.media, .bd {overflow:hidden; _overflow:visible; zoom:1;}
+.media .img {float:left; margin-right: 10px;}
+.media .img img{display:block;}
+.media .imgExt{float:right; margin-left: 10px;}
+
+.chat-component {
+  background: #666;
+  width: 500px;
+}
+.chat-component .bd {
+  width: 385px;
+}
+.chat-component .conversation {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  height: 300px;
+  overflow: scroll;
+}
+.chat-component .txt {
+  float: left;
+  clear: both;
+}
+
+.chat-component .user-message {
+  background: #fff;
+  float: left;
+}
+
+.chat-component .avatar {
+  border-radius: 50px;
+  width:50px;
+}
+
+.chat-component .user-message {
+  padding: 10px;
+  border-radius: 5px;
+  margin-top: 3px;
+  width: 50%;
+  box-shadow: 0 1px 2px rgba( 0, 0, 0, .05);
+}
+
+.chat-component .time-stamp {
+  float: left;
+  margin: 15px 0 0 10px;
+  color: #cecece;
+  font-size: 14px;
+}
+
+.chat-component .clock {
+  background: url( ../images/clock.png );
+  display: inline-block;
+  height: 17px;
+  width: 17px;
+}
+
+.chat-component .new-message {
+  overflow: hidden;
+}
+
+.chat-component .txt-field {
+  border: none;
+  margin: 0;
+  padding: 10px;
+  width: 75%;
+  float: left;
+}
+
+.chat-component .send-btn {
+  display: block;
+  float:left;
+  width: 25%;
+  text-align:center;
+  padding: 10px 0;
+  position: relative;
+  color:#606366;
+  text-decoration: none;
+  border: none;
+}
+
+.chat-component .new-message {
+  border: 1px solid #666;
+  border-top: none;
+}
