@@ -64,7 +64,7 @@ App.GroupChatComponent = Ember.Component.extend({
 
       // When the Ember run loop is done
       // scroll to the bottom
-      Ember.run.next( function () {
+      Ember.run.schedule('afterRender', function () {
         conversation.scrollTop = conversation.scrollHeight;
       });
 
@@ -100,16 +100,19 @@ App.UserAvatarComponent = Ember.Component.extend({
 });
 
 App.TimeStampComponent = Ember.Component.extend({
+
   startTimer: function () {
-    var self = this, currentTime;
-    this._timer = setInterval( function () {
-      currentTime = self.get( 'time' );
-      self.set( 'time', ( currentTime - 60000  ) );
-    }, 60000 );
-  }.on( 'didInsertElement' ),
+    var currentTime = this.get('time');
+    this.set('time', currentTime - 6000 );
+    this.scheduleStartTimer();
+  },
+
+  scheduleStartTimer: function(){
+    this._timer = Ember.run.later(this, 'startTimer', 6000);
+  }.on('didInsertElement'),
 
   killTimer: function () {
-    clearInterval( this._timer );
+    Ember.run.cancel( this._timer );
   }.on( 'willDestroyElement' )
 
 });
